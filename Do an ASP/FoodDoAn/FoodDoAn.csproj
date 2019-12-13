@@ -77,6 +77,7 @@
     <Content Include="admin\css\sb-admin-2.min.css" />
     <Content Include="admin\danhsachsp.aspx" />
     <Content Include="admin\food.aspx" />
+    <Content Include="admin\Food_edit.aspx" />
     <Content Include="admin\forgot-password.html" />
     <Content Include="admin\gulpfile.js" />
     <Content Include="admin\img\undraw_posting_photo.svg" />
@@ -89,8 +90,9 @@
     <Content Include="admin\js\sb-admin-2.js" />
     <Content Include="admin\js\sb-admin-2.min.js" />
     <Content Include="admin\login.html" />
+    <Content Include="admin\member_edit.aspx" />
     <Content Include="admin\refer.aspx" />
-    <Content Include="admin\register.aspx" />
+    <Content Include="admin\member.aspx" />
     <Content Include="admin\register.html" />
     <Content Include="admin\tables.html" />
     <Content Include="admin\utilities-animation.html" />
@@ -1691,6 +1693,7 @@
     <Content Include="admin\vendor\jquery\jquery.min.js" />
     <Content Include="admin\vendor\jquery\jquery.slim.js" />
     <Content Include="admin\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="admin\Danhsach_Food.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -1716,12 +1719,26 @@
     <Compile Include="admin\food.aspx.designer.cs">
       <DependentUpon>food.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Food_edit.aspx.cs">
+      <DependentUpon>Food_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Food_edit.aspx.designer.cs">
+      <DependentUpon>Food_edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\member_edit.aspx.cs">
+      <DependentUpon>member_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\member_edit.aspx.designer.cs">
+      <DependentUpon>member_edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\refer.aspx.cs">
       <DependentUpon>refer.aspx</DependentUpon>
@@ -1730,15 +1747,23 @@
     <Compile Include="admin\refer.aspx.designer.cs">
       <DependentUpon>refer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\register.aspx.cs">
-      <DependentUpon>register.aspx</DependentUpon>
+    <Compile Include="admin\member.aspx.cs">
+      <DependentUpon>member.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\register.aspx.designer.cs">
-      <DependentUpon>register.aspx</DependentUpon>
+    <Compile Include="admin\member.aspx.designer.cs">
+      <DependentUpon>member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Danhsach_Food.aspx.cs">
+      <DependentUpon>Danhsach_Food.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Danhsach_Food.aspx.designer.cs">
+      <DependentUpon>Danhsach_Food.aspx</DependentUpon>
     </Compile>
     <Compile Include="HttpCode\Comment.cs" />
     <Compile Include="HttpCode\DataProvider.cs" />
+    <Compile Include="HttpCode\Food.cs" />
     <Compile Include="HttpCode\FoodType.cs" />
     <Compile Include="HttpCode\Member.cs" />
     <Compile Include="HttpCode\Post.cs" />

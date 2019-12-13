@@ -56,7 +56,7 @@
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="register.aspx">Đăng Kí Thành Viên</a>
+                            <a class="collapse-item" href="member.aspx">Đăng Kí Thành Viên</a>
                              <a class="collapse-item" href="danhsachsp.aspx">Danh Sách Thành Viên</a>
                         </div>
                     </div>
@@ -71,6 +71,20 @@
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="food.aspx">Thêm Món </a>
+                            <a class="collapse-item" href="Danhsach_Food.aspx">Danh Sách Món Ăn </a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#food_type" aria-expanded="true" aria-controls="food_type">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Quản Lý Loại Món Ăn</span>
+                    </a>
+                    <div id="food_type" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="member.aspx">Thêm Loại Món </a>
+                             <a class="collapse-item" href="danhsachsp.aspx">Danh Sách Loại Món Ăn</a>
                         </div>
                     </div>
                 </li>
@@ -344,7 +358,7 @@
         <script src="<%= ResolveUrl("~")%>admin/js/sb-admin-2.min.js"></script>
         <asp:ContentPlaceHolder ID="cph_js" runat="server"></asp:ContentPlaceHolder>
 
-
+          
     </form>
 </body>
 </html>

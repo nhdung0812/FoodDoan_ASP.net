@@ -53,7 +53,10 @@ namespace FoodDoAn.HttpCode
 
         public int Status { get => _status; set => _status = value; }
 
-        
+        public Member()
+        {
+
+        }
 		public Member(string _userName,  string _name, string _pass, string _phone, int _role, int _status)
 		{
 			this._userName = _userName;
@@ -63,7 +66,10 @@ namespace FoodDoAn.HttpCode
 			this._role = _role;
             this._status= _status;
 		}
-
+        public Member(string _userName)
+        {
+            this._userName = _userName;
+        }
 		public bool addMember()
 		{
 			string sQuery = "INSERT INTO [dbo].[member] ([username] ,[pass] ,[name] ,[phone] ,[role], [status]) VALUES (@username ,@pass ,@name ,@phone ,@role,@status)";
@@ -84,6 +90,34 @@ namespace FoodDoAn.HttpCode
             string sQuery = "SELECT * FROM[dbo].[member] WHERE [username] = @username ";
             SqlParameter sqlParams = new SqlParameter("@username", SqlDbType.VarChar, 50) { Value = this.UserName };
             return DataProvider.executeQuey(sQuery, sqlParams);
+        }
+
+        public bool updateUser()
+        {
+            string sQuery = "UPDATE [dbo].[member] SET [name] = @name,[phone] =@phone,[role] = @role,[status] = @status WHERE [username] = @username";
+            SqlParameter[] sqlParams =
+            {
+                new SqlParameter("username",SqlDbType.VarChar,50){Value = this.UserName},
+                new SqlParameter("@name", SqlDbType.VarChar, 200){Value = this.Name },
+                new SqlParameter("@phone", SqlDbType.VarChar, 20){Value = this.Phone },
+                new SqlParameter("@role", SqlDbType.Int){Value = this.Role },
+                new SqlParameter("@status", SqlDbType.Int){Value = this.Status}
+            };
+            return DataProvider.executeNonQuery(sQuery, sqlParams);
+        }
+        public  DataTable getUserName(string name)
+        {
+            string sQuery = "SELECT * FROM[dbo].[member] WHERE [username] = '"+ name +"'" ;
+            return DataProvider.getUserName(sQuery);
+        }
+
+        public bool delect()
+        {
+            string sQuery = "DELETE FROM [dbo].[member] WHERE [username] = '" + this.UserName +"'";
+           // SqlParameter sqlParams = new SqlParameter("@username", SqlDbType.VarChar, 50) { Value = this.UserName };
+        
+            
+            return DataProvider.deleteUsername(sQuery);
         }
 	}
 }   

@@ -20,12 +20,13 @@ namespace FoodDoAn
             //string firstName = txtFirstName.Text;
             string name = txtName.Text;
             string username = txtUserName.Text;
-            //string email = txtEmail.Text;
+            //string email = txtEmail.Text;8
             string phone = txtPhone.Text;
             string pass = txtPassword.Text;
             int role = Convert.ToInt32(ddl_user.SelectedValue);
             int status = Convert.ToInt32(ddl_status.SelectedValue);
             Member member = new Member(username, name, pass, phone, role, status);
+
             if (member.addMember())
             {
 
@@ -44,5 +45,6 @@ namespace FoodDoAn
 
 
         }
+        
     }
 }

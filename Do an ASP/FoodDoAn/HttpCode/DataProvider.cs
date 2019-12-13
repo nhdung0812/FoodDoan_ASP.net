@@ -18,7 +18,7 @@ namespace FoodDoAn.HttpCode
             }
         }
 
-        public static bool executeNonQuery(string sQuery,SqlParameter[] sParams)
+        public static bool executeNonQuery(string sQuery, SqlParameter[] sParams)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace FoodDoAn.HttpCode
 
         //lấy về id tang tụ đông
 
-        public static int executeScalar(string sQuery , SqlParameter[] sParams)
+        public static int executeScalar(string sQuery, SqlParameter[] sParams)
         {
             try
             {
@@ -47,17 +47,17 @@ namespace FoodDoAn.HttpCode
                 cmd.Parameters.AddRange(sParams);
                 cmd.ExecuteNonQuery();
                 sQuery = "Select * @@identity";
-                cmd =new SqlCommand(sQuery, conn);
+                cmd = new SqlCommand(sQuery, conn);
                 int id = (int)cmd.ExecuteScalar();
                 conn.Close();
                 return id;
             }
             catch (Exception err)
             {
-                
+
                 throw;
             }
-            
+
         }
 
         public static DataTable getDataTable(string sQuery, SqlParameter[] sParams)
@@ -66,6 +66,7 @@ namespace FoodDoAn.HttpCode
             {
                 Connect();
                 SqlDataAdapter da = new SqlDataAdapter(sQuery, conn);
+                //cmd.Parameters.AddRange(sParams);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
@@ -102,6 +103,43 @@ namespace FoodDoAn.HttpCode
                 return false;
             }
             return flag;
+        }
+
+        // laasys rows theo username
+       public static DataTable getUserName(string sQuery)
+        {
+            try
+            {
+                Connect();
+                SqlDataAdapter da = new SqlDataAdapter(sQuery, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception err)
+            {
+
+                throw;
+            }
+        }
+        public static bool deleteUsername(string sQuery)
+        {
+            try
+            {
+                Connect();
+                SqlCommand cmd = new SqlCommand(sQuery,conn);
+               // cmd.Parameters.Add(sParams);
+
+                SqlDataReader raeder = cmd.ExecuteReader();
+                conn.Close();
+                return true;
+            }
+            catch (Exception err)
+            {
+
+                return false;
+            }
         }
 
 
