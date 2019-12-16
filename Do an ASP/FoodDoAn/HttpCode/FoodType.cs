@@ -63,6 +63,16 @@ namespace FoodDoAn.HttpCode
 			set { _type_post = value; }
 		}
 
+		public FoodType (string type_name , int type_post , string type_img, int status , string username, DateTime modified )
+		{
+			this._type_name = type_name;
+			this._type_post = type_post;
+			this._type_img = type_img;
+			this._status = status;
+			this._username = username;
+			this._modified = modified;
+		}
+
 
 	}
 }

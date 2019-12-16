@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,7 +13,10 @@ namespace FoodDoAn
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                loadData();
+            }
         }
 
         protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,6 +55,54 @@ namespace FoodDoAn
             }
         }
 
-        
+        public void loadData()
+        {
+            DataTable dt = new DataTable();
+            Member m = new Member();
+            dt = m.dataMember();
+            PagedDataSource pgitem = new PagedDataSource();
+            System.Data.DataView dv = new System.Data.DataView(dt);
+            pgitem.DataSource = dv;
+            pgitem.AllowPaging = true;
+            pgitem.PageSize = 3;
+            pgitem.CurrentPageIndex = PageNumber;
+            if (pgitem.PageCount > 1)
+            {
+                rptDSTV.Visible = true;
+
+                if (!pgitem.IsLastPage)
+                {
+                    //LinkNext.NavigateUrl = 
+                }
+                System.Collections.ArrayList pages = new System.Collections.ArrayList();
+                for (int i = 0; i <= pgitem.PageCount - 1; i++)
+                {
+                    pages.Add((i + 1).ToString());
+                    Repeater1.DataSource = pages;
+                    Repeater1.DataBind();
+                }
+
+            }
+            else
+            {
+                Repeater1.Visible = false;
+            }
+            rptDSTV.DataSource = pgitem;
+            rptDSTV.DataBind();
+        }
+        public int PageNumber
+        {
+            get
+            {
+                if (ViewState["PageNumber"] != null)
+                    return Convert.ToInt32(ViewState["PageNumber"]);
+                else
+                    return 0;
+            }
+            set
+            {
+                ViewState["PageNumber"] = value;
+            }
+        }
     }
 }

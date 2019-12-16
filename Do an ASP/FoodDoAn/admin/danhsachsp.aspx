@@ -29,7 +29,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                     <asp:Repeater ID="rptDSTV" runat="server" DataSourceID="SqlDataSource1"  OnItemCommand="rptDSTV_ItemCommand">
+                     <asp:Repeater ID="rptDSTV" runat="server"   OnItemCommand="rptDSTV_ItemCommand">
                    
                             <ItemTemplate>
                                 <tr>
@@ -49,7 +49,25 @@
                   </tbody>
                 </table>
               </div>
+                <br />
+                <div style="overflow: hidden; text-align: center;">
+                <asp:LinkButton ID="Linkprev" runat="server"><span class=""style="color: darkgray;" ><<</span></asp:LinkButton>
 
+                <asp:Repeater ID="Repeater1" runat="server"
+                    OnItemCommand="rptDSTV_ItemCommand">
+                    <ItemTemplate>
+
+                        <asp:LinkButton ID="btnPage"
+                            Style="margin-left: 20px; color: darkgray; font: 12pt tahoma;"
+                            CommandName="Page" CommandArgument="<%# Container.DataItem %>"
+                            runat="server"><%# Container.DataItem %>
+                        </asp:LinkButton>
+
+                    </ItemTemplate>
+
+                </asp:Repeater>
+                <asp:LinkButton ID="LinpkNext" runat="server" ><span class="" style="margin-left:20px;color: darkgray;">>></span></asp:LinkButton>
+            </div>
             </div>
           </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Food_SaleConnectionString2 %>" SelectCommand="SELECT * FROM [member]"></asp:SqlDataSource>

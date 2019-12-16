@@ -138,5 +138,10 @@ namespace FoodDoAn.HttpCode
 
             return DataProvider.deleteUsername(sQuery);
         }
+        public DataTable timKiem(string text)
+        {
+            string sQuery = "select * from food where name like '%" + text + "%'";
+            return DataProvider.getUserName(sQuery);
+        }
     }
 }

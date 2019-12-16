@@ -1694,6 +1694,7 @@
     <Content Include="admin\vendor\jquery\jquery.slim.js" />
     <Content Include="admin\vendor\jquery\jquery.slim.min.js" />
     <Content Include="admin\Danhsach_Food.aspx" />
+    <Content Include="admin\Food_Type.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -1760,6 +1761,13 @@
     </Compile>
     <Compile Include="admin\Danhsach_Food.aspx.designer.cs">
       <DependentUpon>Danhsach_Food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Food_Type.aspx.cs">
+      <DependentUpon>Food_Type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Food_Type.aspx.designer.cs">
+      <DependentUpon>Food_Type.aspx</DependentUpon>
     </Compile>
     <Compile Include="HttpCode\Comment.cs" />
     <Compile Include="HttpCode\DataProvider.cs" />

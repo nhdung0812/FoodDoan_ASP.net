@@ -110,8 +110,12 @@ namespace FoodDoAn.HttpCode
             string sQuery = "SELECT * FROM[dbo].[member] WHERE [username] = '"+ name +"'" ;
             return DataProvider.getUserName(sQuery);
         }
-
-        public bool delect()
+		public DataTable dataMember()
+		{
+			string sQuery = "SELECT * FROM [dbo].[member]";
+			return DataProvider.getUserName(sQuery);
+		}
+		public bool delect()
         {
             string sQuery = "DELETE FROM [dbo].[member] WHERE [username] = '" + this.UserName +"'";
            // SqlParameter sqlParams = new SqlParameter("@username", SqlDbType.VarChar, 50) { Value = this.UserName };

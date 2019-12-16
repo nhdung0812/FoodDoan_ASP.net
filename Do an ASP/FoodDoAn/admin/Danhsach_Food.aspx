@@ -7,10 +7,8 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <button class="btn btn-primary">
-                <i class="fas fa-search fa-sm"></i>
-            </button>
+            <asp:TextBox ID="TextBox1" runat="server" AutoPostBack="true" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+            
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -77,7 +75,6 @@
             </div>
             <br />
             <div style="overflow: hidden; text-align: center;">
-                <asp:LinkButton ID="Linkprev" runat="server"><span class=""style="color: darkgray;" onclick="Linkprev_Click"><<</span></asp:LinkButton>
 
                 <asp:Repeater ID="rptDSTV" runat="server"
                     OnItemCommand="rptDSTV_ItemCommand">
@@ -92,10 +89,10 @@
                     </ItemTemplate>
 
                 </asp:Repeater>
-                <asp:LinkButton ID="LinpkNext" runat="server" OnClick="LinpkNext_Click" ><span class="" style="margin-left:20px;color: darkgray;">>></span></asp:LinkButton>
             </div>
         </div>
     </div>
+    <asp:Label ID="Label1" runat="server" Text="Label">s</asp:Label>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Food_SaleConnectionString2 %>" SelectCommand="SELECT * FROM [food]"></asp:SqlDataSource>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_js" runat="server">

@@ -12,21 +12,24 @@ namespace FoodDoAn
     public partial class Danhsach_Food : System.Web.UI.Page
     {
         //public int PageNumber { get; private set; }
-
+        DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
+                Food m = new Food();
+                dt = m.dataFood();
                 loadData();
 
             }
+            
         }
 
         protected void rptDSTV_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-
             PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
-
+            
             if (e.CommandName == "edit")
             {
                 string id = e.CommandArgument.ToString();
@@ -54,9 +57,7 @@ namespace FoodDoAn
         }
         public void loadData()
         {
-            DataTable dt = new DataTable();
-            Food m = new Food();
-            dt = m.dataFood();
+           
             PagedDataSource pgitem = new PagedDataSource();
             System.Data.DataView dv = new System.Data.DataView(dt);
             pgitem.DataSource = dv;
@@ -108,6 +109,27 @@ namespace FoodDoAn
             PageNumber += 1;
             rptPages.DataBind();
         }
-        
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+
+            if (TextBox1.Text == "")
+            {
+                Food m = new Food();
+                dt = m.dataFood();
+                loadData();
+                
+            }
+            else
+            {
+                Food f = new Food();
+                dt = f.timKiem(TextBox1.Text);
+                rptPages.DataSource = dt ;
+
+                rptPages.DataBind();
+                loadData();
+            }
+        }
     }
 }

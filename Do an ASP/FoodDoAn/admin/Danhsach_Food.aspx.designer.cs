@@ -33,15 +33,6 @@ namespace FoodDoAn
         protected global::System.Web.UI.WebControls.Repeater rptPages;
 
         /// <summary>
-        /// Linkprev control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Linkprev;
-
-        /// <summary>
         /// rptDSTV control.
         /// </summary>
         /// <remarks>
@@ -51,13 +42,13 @@ namespace FoodDoAn
         protected global::System.Web.UI.WebControls.Repeater rptDSTV;
 
         /// <summary>
-        /// LinpkNext control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinpkNext;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// SqlDataSource1 control.

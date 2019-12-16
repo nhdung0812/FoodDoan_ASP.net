@@ -83,7 +83,7 @@
                     </a>
                     <div id="food_type" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="member.aspx">Thêm Loại Món </a>
+                            <a class="collapse-item" href="Food_Type.aspx">Thêm Loại Món </a>
                              <a class="collapse-item" href="danhsachsp.aspx">Danh Sách Loại Món Ăn</a>
                         </div>
                     </div>
