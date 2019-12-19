@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FoodDoAn
+namespace FoodDoAn.admin
 {
 
 
-    public partial class Food_Type
+    public partial class Food_Type_Edit
     {
 
         /// <summary>
@@ -40,6 +40,24 @@ namespace FoodDoAn
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_pos;
+
+        /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
+        /// HiddenField1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
 
         /// <summary>
         /// FileUpload1 control.
@@ -78,12 +96,12 @@ namespace FoodDoAn
         protected global::System.Web.UI.WebControls.TextBox txt_Ngay;
 
         /// <summary>
-        /// btn_Them control.
+        /// btn_capnhat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Them;
+        protected global::System.Web.UI.WebControls.Button btn_capnhat;
     }
 }

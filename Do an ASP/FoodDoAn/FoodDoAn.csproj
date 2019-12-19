@@ -76,8 +76,10 @@
     <Content Include="admin\css\sb-admin-2.css" />
     <Content Include="admin\css\sb-admin-2.min.css" />
     <Content Include="admin\danhsachsp.aspx" />
+    <Content Include="admin\Danh_Sach_Food_Type.aspx" />
     <Content Include="admin\food.aspx" />
     <Content Include="admin\Food_edit.aspx" />
+    <Content Include="admin\Food_Type_Edit.aspx" />
     <Content Include="admin\forgot-password.html" />
     <Content Include="admin\gulpfile.js" />
     <Content Include="admin\img\undraw_posting_photo.svg" />
@@ -1713,6 +1715,13 @@
     <Compile Include="admin\danhsachsp.aspx.designer.cs">
       <DependentUpon>danhsachsp.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Danh_Sach_Food_Type.aspx.cs">
+      <DependentUpon>Danh_Sach_Food_Type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Danh_Sach_Food_Type.aspx.designer.cs">
+      <DependentUpon>Danh_Sach_Food_Type.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\food.aspx.cs">
       <DependentUpon>food.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1726,6 +1735,13 @@
     </Compile>
     <Compile Include="admin\Food_edit.aspx.designer.cs">
       <DependentUpon>Food_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Food_Type_Edit.aspx.cs">
+      <DependentUpon>Food_Type_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Food_Type_Edit.aspx.designer.cs">
+      <DependentUpon>Food_Type_Edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

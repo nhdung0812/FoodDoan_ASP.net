@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Danhsach_Food.aspx.cs" Inherits="FoodDoAn.Danhsach_Food" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Danhsach_Food.aspx.cs" Inherits="FoodDoAn.Danhsach_Food" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -92,7 +92,6 @@
             </div>
         </div>
     </div>
-    <asp:Label ID="Label1" runat="server" Text="Label">s</asp:Label>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Food_SaleConnectionString2 %>" SelectCommand="SELECT * FROM [food]"></asp:SqlDataSource>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_js" runat="server">

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.Data.SqlClient;
+using System.Data;
 namespace FoodDoAn.HttpCode
 {
     public class FoodType
@@ -72,7 +73,54 @@ namespace FoodDoAn.HttpCode
 			this._username = username;
 			this._modified = modified;
 		}
+		public FoodType ()
+		{
 
+		}
+		public FoodType (int id)
+		{
+			this._type_id = id;
+		}
+		public DataTable getId(int id)
+		{
+			string sQuery = "SELECT * FROM[dbo].[food_type] WHERE [type_id] = '" + id + "'";
+			return DataProvider.getUserName(sQuery);
+		}
+		public bool AddFoodType()
+		{
+			string ketnoi = "INSERT INTO [dbo].[food_type] ([type_name],[type_pos],[type_img],[status],[username],[modidied]) VALUES (@type_name , @type_pos, @type_img, @status, @username, @modidied  )";
+			SqlParameter[] paras = {
+			   new SqlParameter("@type_name", SqlDbType.NVarChar, 50){ Value = this.TypeName },
+			   new SqlParameter("@type_pos", SqlDbType.Int){ Value = this.TypePost},
+			   new SqlParameter("@type_img", SqlDbType.NVarChar, 255){ Value = this.TypeImg},
+			   new SqlParameter("@status", SqlDbType.Int){ Value = this.Status},
+			   new SqlParameter("@username", SqlDbType.NVarChar, 50){ Value = this.UserName},
+			   new SqlParameter("@modidied", SqlDbType.DateTime){ Value = this.Modified},
 
+			};
+
+			return DataProvider.executeNonQuery(ketnoi, paras);
+		}
+		public bool updateFood(int id)
+		{
+			string sQuery = "UPDATE [dbo].[food_type] SET[type_name] = @type_name,[type_pos] = @type_pos,[type_img] = @type_img,[status] = @status,[username] = @username,[modidied] = @modidied  WHERE [type_id] = " + id ;
+			SqlParameter[] paras = {
+			  
+			   new SqlParameter("@type_name", SqlDbType.NVarChar, 50){ Value = this.TypeName },
+			   new SqlParameter("@type_pos", SqlDbType.Int){ Value = this.TypePost},
+			   new SqlParameter("@type_img", SqlDbType.NVarChar, 255){ Value = this.TypeImg},
+			   new SqlParameter("@status", SqlDbType.Int){ Value = this.Status},
+			   new SqlParameter("@username", SqlDbType.NVarChar, 50){ Value = this.UserName},
+			   new SqlParameter("@modidied", SqlDbType.DateTime){ Value = this.Modified},
+
+			};
+
+			return DataProvider.executeNonQuery(sQuery, paras);
+		}
+		public DataTable dataFood()
+		{
+			string sQuery = "SELECT * FROM [dbo].[food_type]";
+			return DataProvider.getUserName(sQuery);
+		}
 	}
 }
