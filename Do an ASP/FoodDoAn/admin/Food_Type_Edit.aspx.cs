@@ -18,7 +18,7 @@ namespace FoodDoAn.admin
                  string id = Request.QueryString["id"];
             FoodType ds = new FoodType(Convert.ToInt32(id));
                 DataTable dSFoodType = ds.getId(Convert.ToInt32(id));
-
+                txt_Ngay.Enabled = false;
                 foreach (DataRow row in dSFoodType.Rows)
                 {
                     txtName.Text = row["type_name"].ToString();

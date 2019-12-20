@@ -57,7 +57,7 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="member.aspx">Đăng Kí Thành Viên</a>
-                             <a class="collapse-item" href="danhsachsp.aspx">Danh Sách Thành Viên</a>
+                             <a class="collapse-item" href="Danhsach_Member.aspx">Danh Sách Thành Viên</a>
                         </div>
                     </div>
                 </li>

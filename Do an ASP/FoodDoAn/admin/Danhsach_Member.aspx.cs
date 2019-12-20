@@ -31,7 +31,8 @@ namespace FoodDoAn
 
         protected void rptDSTV_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            if(e.CommandName == "edit")
+            
+            if (e.CommandName == "edit")
             {
                 string username = e.CommandArgument.ToString();
 
@@ -53,6 +54,8 @@ namespace FoodDoAn
                     Response.Redirect("~/Admin/danhsachsp.aspx");
                 }
             }
+            PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
+            loadData();
         }
 
         public void loadData()
@@ -64,16 +67,12 @@ namespace FoodDoAn
             System.Data.DataView dv = new System.Data.DataView(dt);
             pgitem.DataSource = dv;
             pgitem.AllowPaging = true;
-            pgitem.PageSize = 3;
+            pgitem.PageSize = 5 ;
             pgitem.CurrentPageIndex = PageNumber;
             if (pgitem.PageCount > 1)
             {
-                rptDSTV.Visible = true;
+                Repeater1.Visible = true;
 
-                if (!pgitem.IsLastPage)
-                {
-                    //LinkNext.NavigateUrl = 
-                }
                 System.Collections.ArrayList pages = new System.Collections.ArrayList();
                 for (int i = 0; i <= pgitem.PageCount - 1; i++)
                 {
@@ -81,7 +80,7 @@ namespace FoodDoAn
                     Repeater1.DataSource = pages;
                     Repeater1.DataBind();
                 }
-
+                
             }
             else
             {

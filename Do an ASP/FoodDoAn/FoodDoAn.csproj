@@ -75,7 +75,7 @@
     <Content Include="admin\charts.html" />
     <Content Include="admin\css\sb-admin-2.css" />
     <Content Include="admin\css\sb-admin-2.min.css" />
-    <Content Include="admin\danhsachsp.aspx" />
+    <Content Include="admin\Danhsach_Member.aspx" />
     <Content Include="admin\Danh_Sach_Food_Type.aspx" />
     <Content Include="admin\food.aspx" />
     <Content Include="admin\Food_edit.aspx" />
@@ -1708,12 +1708,12 @@
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="admin\danhsachsp.aspx.cs">
-      <DependentUpon>danhsachsp.aspx</DependentUpon>
+    <Compile Include="admin\Danhsach_Member.aspx.cs">
+      <DependentUpon>Danhsach_Member.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\danhsachsp.aspx.designer.cs">
-      <DependentUpon>danhsachsp.aspx</DependentUpon>
+    <Compile Include="admin\Danhsach_Member.aspx.designer.cs">
+      <DependentUpon>Danhsach_Member.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Danh_Sach_Food_Type.aspx.cs">
       <DependentUpon>Danh_Sach_Food_Type.aspx</DependentUpon>

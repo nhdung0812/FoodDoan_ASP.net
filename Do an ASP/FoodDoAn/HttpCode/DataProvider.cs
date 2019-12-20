@@ -9,7 +9,7 @@ namespace FoodDoAn.HttpCode
 {
     public class DataProvider
     {
-        public static SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-EA5RTBC;Initial Catalog=Food_Sale;Integrated Security=True");
+        public static SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-SB4FNSQ\SQLEXPRESS;Initial Catalog=Food_Sale;Integrated Security=True");
         public static void Connect()
         {
             if (ConnectionState.Broken == conn.State || ConnectionState.Closed == conn.State)

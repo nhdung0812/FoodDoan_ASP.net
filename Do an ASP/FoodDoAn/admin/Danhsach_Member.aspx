@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin.Master" AutoEventWireup="true" CodeBehind="danhsachsp.aspx.cs" Inherits="FoodDoAn.danhsachsp" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin.Master" AutoEventWireup="true" CodeBehind="Danhsach_Member.aspx.cs" Inherits="FoodDoAn.danhsachsp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- Custom styles for this page -->
@@ -51,7 +51,7 @@
               </div>
                 <br />
                 <div style="overflow: hidden; text-align: center;">
-                <asp:LinkButton ID="Linkprev" runat="server"><span class=""style="color: darkgray;" ><<</span></asp:LinkButton>
+                
 
                 <asp:Repeater ID="Repeater1" runat="server"
                     OnItemCommand="rptDSTV_ItemCommand">
@@ -66,10 +66,10 @@
                     </ItemTemplate>
 
                 </asp:Repeater>
-                <asp:LinkButton ID="LinpkNext" runat="server" ><span class="" style="margin-left:20px;color: darkgray;">>></span></asp:LinkButton>
+                
             </div>
             </div>
-          </div>
+     
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Food_SaleConnectionString2 %>" SelectCommand="SELECT * FROM [member]"></asp:SqlDataSource>
 
 </asp:Content>

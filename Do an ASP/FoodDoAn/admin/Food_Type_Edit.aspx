@@ -21,8 +21,9 @@
                                 <asp:TextBox ID="txt_pos" runat="server" type="text" CssClass="form-control form-control-user" placeholder=""></asp:TextBox>
                             </div>
                             <div class="col-sm-4  mb-3 mb-sm-0">
-                                <asp:Image ID="Image1" runat="server" />
+                                <asp:Image ID="Image1" runat="server" Width="100px" Height="100px"/>
                                 <asp:HiddenField ID="HiddenField1" runat="server" />
+                                <br />
                                 <asp:FileUpload ID="FileUpload1" runat="server" />
                             </div>
                         </div>

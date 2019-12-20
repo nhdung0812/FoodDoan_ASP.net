@@ -13,22 +13,25 @@ namespace FoodDoAn
     {
         //public int PageNumber { get; private set; }
         DataTable dt;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             
             if (!IsPostBack)
+            { 
+                
+                loadData();
+            }
+            if(TextBox1.Text == "")
             {
                 Food m = new Food();
                 dt = m.dataFood();
-                loadData();
-
             }
-            
         }
 
         protected void rptDSTV_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
+            
             
             if (e.CommandName == "edit")
             {
@@ -51,27 +54,23 @@ namespace FoodDoAn
                     Response.Redirect("~/Admin/Danhsach_Food.aspx");
                 }
             }
-            
+            PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
             loadData();
         }
         public void loadData()
         {
-           
+            Food m = new Food();
+            dt = m.dataFood();
             PagedDataSource pgitem = new PagedDataSource();
             System.Data.DataView dv = new System.Data.DataView(dt);
             pgitem.DataSource = dv;
             pgitem.AllowPaging = true;
-            pgitem.PageSize = 3;
+            pgitem.PageSize = 5;
             pgitem.CurrentPageIndex = PageNumber;
             if (pgitem.PageCount > 1)
             {
                 
                 rptDSTV.Visible = true;
-                
-                if(!pgitem.IsLastPage)
-                {
-                    //LinkNext.NavigateUrl = 
-                }
                 System.Collections.ArrayList pages = new System.Collections.ArrayList();
                 for (int i = 0; i <= pgitem.PageCount - 1; i++)
                 {
@@ -85,6 +84,7 @@ namespace FoodDoAn
             {
                 rptDSTV.Visible = false;         
             }
+            //flag = false;
             rptPages.DataSource = pgitem;
             rptPages.DataBind();
         }
@@ -103,30 +103,23 @@ namespace FoodDoAn
             }
         }
 
-        protected void LinpkNext_Click(object sender, EventArgs e)
-        {
-            PageNumber += 1;
-            rptPages.DataBind();
-        }
-
+       
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
 
             if (TextBox1.Text == "")
             {
                 Food m = new Food();
                 dt = m.dataFood();
+               
                 loadData();
-                
+
             }
             else
             {
                 Food f = new Food();
-                dt = f.timKiem(TextBox1.Text);
-                rptPages.DataSource = dt ;
-
-                rptPages.DataBind();
+                dt = f.timKiem(TextBox1.Text); 
                 loadData();
             }
         }
