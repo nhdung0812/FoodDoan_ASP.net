@@ -42,15 +42,7 @@ namespace FoodDoAn.admin
             int status = Convert.ToInt32(txt_status.Text);
             string username = txt_username.Text;
             string filename = FileUpload1.FileName;
-            //if (filename != "")
-            //{
-            //    string path = Server.MapPath("~/admin/img/");
-            //    FileUpload1.SaveAs(path + filename);
-            //}
-            //else
-            //{
-            //     filename = Image1.ImageUrl;
-            //}
+           
 
             
             FileUpload1.SaveAs(path + filename);

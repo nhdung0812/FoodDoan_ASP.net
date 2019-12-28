@@ -70,6 +70,11 @@ namespace FoodDoAn.HttpCode
         {
             this._userName = _userName;
         }
+		public Member(string _userName,string _pass)
+		{
+			this._userName = _userName;
+			this._pass = _pass;
+		}
 		public bool addMember()
 		{
 			string sQuery = "INSERT INTO [dbo].[member] ([username] ,[pass] ,[name] ,[phone] ,[role], [status]) VALUES (@username ,@pass ,@name ,@phone ,@role,@status)";
@@ -91,13 +96,19 @@ namespace FoodDoAn.HttpCode
             SqlParameter sqlParams = new SqlParameter("@username", SqlDbType.VarChar, 50) { Value = this.UserName };
             return DataProvider.executeQuey(sQuery, sqlParams);
         }
+		public DataTable checkLogin(string user, string pass)
+		{
+			
+			string sQuery = "SELECT username , pass FROM member WHERE username = '"+ user +"' and pass = '"+StringProc.MD5Hash(pass)+"' and status ='1'";
 
+			return DataProvider.getUserName(sQuery);
+		}
         public bool updateUser()
         {
             string sQuery = "UPDATE [dbo].[member] SET [name] = @name,[phone] =@phone,[role] = @role,[status] = @status WHERE [username] = @username";
             SqlParameter[] sqlParams =
             {
-                new SqlParameter("username",SqlDbType.VarChar,50){Value = this.UserName},
+                new SqlParameter("@username",SqlDbType.VarChar,50){Value = this.UserName},
                 new SqlParameter("@name", SqlDbType.VarChar, 200){Value = this.Name },
                 new SqlParameter("@phone", SqlDbType.VarChar, 20){Value = this.Phone },
                 new SqlParameter("@role", SqlDbType.Int){Value = this.Role },
